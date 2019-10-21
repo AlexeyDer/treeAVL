@@ -2,6 +2,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Arrays.*;
 import java.util.Random;
+import java.util.Scanner;
 
 public class SDP extends Tree{
 
@@ -49,7 +50,7 @@ public class SDP extends Tree{
 		}
 	
 	public static void main(String[] args) {
-		final int n = 100;
+		final int n = 1000	;
 		Tree tree = new Tree();
 
 		boolean b = true;
@@ -58,14 +59,10 @@ public class SDP extends Tree{
 		Random random = new Random();
 		
 		int[] m = new int[n];
-//		int[] randM = new int[n];
-//
-//		for (int i = 0; i < n; i++)
-//			randM[i] = random.nextInt(150);
 
 		for (int i = 0; i < n; i++) {
 			while (b) {
-				int x = random.nextInt(500);
+				int x = random.nextInt(10000);
 				for (int j = 0; j < i; j++) {
 					if (x == m[j]) {
 						b = false;
@@ -80,6 +77,8 @@ public class SDP extends Tree{
 			}
 
 		}
+
+
 
 		AVL avl = new AVL();
 		for (int i = 0; i < n; i++) {
@@ -131,9 +130,28 @@ public class SDP extends Tree{
 		System.out.println("    АВЛ  |  " +  tree.Size(avl.root) + "   |     " + tree.Sum(avl.root) + "    |   "
 				+ tree.Height(avl.root) + "   |       " +  h_middleAVL + "     |");
 
+		Scanner scanner = new Scanner(System.in);
 
-		
-		
-		
+		System.out.println("\n\nУдаление:");
+		avl.root = null;
+
+		for (int i = 0; i < 10; i++) {
+			int x = random.nextInt(15);
+			avl.root = avl.insert(avl.root, x);
+		}
+		System.out.println("\nОбход Авл: ");
+
+
+		while(avl.root != null) {
+			tree.Obhod1(avl.root);
+			System.out.println("\nЧто удалить ?: ");
+			avl.root = avl.delete(avl.root, scanner.nextInt());
+		}
+		System.out.println("Avl Пуст");
+
+
+
+
+
 	}
 }
