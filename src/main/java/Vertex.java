@@ -1,43 +1,55 @@
 
 public class Vertex {
-	private int data;
-	private int height;
-	private Vertex Right, Left;
+    private int data;
+    private int height;
+    private Vertex Right, Left;
+    private int Bal;
 
-	Vertex (int data){
-		this.data = data;
-		this.height = 1;
-	}
+    Vertex(int data) {
+        this.data = data;
+        this.height = 1;
+        this.Left = null;
+        this.Right = null;
+        this.Bal = 0;
+    }
 
-	public int getHeight() {
-		return height;
-	}
+    public int getBal() {
+        return Bal;
+    }
 
-	public void setHeight(int height) {
-		this.height = height;
-	}
+    public void setBal(int bal) {
+        Bal = bal;
+    }
 
-	public int getData() {
-		return data;
-	}
+    public int getHeight() {
+        return height;
+    }
 
-	public void setData(int data) {
-		this.data = data;
-	}
+    public void setHeight(int height) {
+        this.height = height;
+    }
 
-	public Vertex getLeft() {
-		return Left;
-	}
+    public int getData() {
+        return data;
+    }
 
-	public Vertex getRight() {
-		return Right;
-	}
+    public void setData(int data) {
+        this.data = data;
+    }
 
-	public void setLeft(Vertex left) {
-		Left = left;
-	}
+    public Vertex getLeft() {
+        return Left;
+    }
 
-	public void setRight(Vertex right) {
-		Right = right;
-	}
+    public Vertex getRight() {
+        return Right;
+    }
+
+    public void setLeft(Vertex left) {
+        Left = left;
+    }
+
+    public void setRight(Vertex right) {
+        Right = right;
+    }
 }

@@ -10,7 +10,7 @@ public class AVL extends Tree {
         return (a > b) ? a : b;
     }
 
-    public Vertex LR (Vertex y) {
+    public Vertex LR(Vertex y) {
         Vertex x = y.getLeft();
         Vertex T2 = x.getRight();
 
@@ -23,7 +23,7 @@ public class AVL extends Tree {
         return x;
     }
 
-    public Vertex RL (Vertex x) {
+    public Vertex RL(Vertex x) {
         Vertex y = x.getRight();
         Vertex T2 = y.getLeft();
 
@@ -42,7 +42,7 @@ public class AVL extends Tree {
         return height(p.getLeft()) - height(p.getRight());
     }
 
-    public Vertex insert (Vertex p, int data) {
+    public Vertex insert(Vertex p, int data) {
         if (p == null)
             return (new Vertex(data));
 
@@ -78,7 +78,7 @@ public class AVL extends Tree {
             return RL(p);
         }
 
-        return  p;
+        return p;
     }
 
     public Vertex minValueNode(Vertex vertex) {
@@ -110,8 +110,7 @@ public class AVL extends Tree {
                     root = null;
                 } else
                     root = temp;
-            }
-            else {
+            } else {
                 Vertex temp = minValueNode(root.getRight());
                 root.setData(temp.getData());
                 root.setRight(delete(root.getRight(), temp.getData()));
@@ -142,7 +141,7 @@ public class AVL extends Tree {
         // RL
         if (balance < -1 && getBalance(root.getRight()) > 0) {
             root.setRight(LR(root.getRight()));
-            return  RL(root);
+            return RL(root);
         }
 
         return root;
