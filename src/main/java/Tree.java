@@ -1,6 +1,11 @@
 class Tree {
     Vertex root;
 
+
+    public int Depth(Vertex p, int dep_count) {
+        return (p == null) ? dep_count : Math.max(Depth(p.getLeft(), dep_count + 1), Depth(p.getRight(), dep_count + 1));
+    }
+
     public Vertex CreateISPD(int l, int r, int[] a) {
         if (l > r)
             return null;

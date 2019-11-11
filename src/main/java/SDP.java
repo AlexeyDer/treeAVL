@@ -135,6 +135,13 @@ public class SDP extends Tree {
 		System.out.println("    ДБД  |  " + tree.Size(bTree.root) + "   |     " + tree.Sum(bTree.root) + "    |   "
 				+ tree.Height(bTree.root) + "   |       " + h_middleBTree + "     |");
 
+
+        System.out.println("\nКолличество уровней в ДБД: " + tree.Depth(bTree.root, 0));
+        System.out.println("\nКолличество уровней в ИСДП: " + tree.Depth(rootISPD, 0));
+
+
+/////////////////////////////////////////////////////////////////////////
+// Удаление из AVL
 //        Scanner scanner = new Scanner(System.in);
 //
 //        System.out.println("\n\nУдаление:");
